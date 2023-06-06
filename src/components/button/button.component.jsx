@@ -5,10 +5,10 @@ const BUTTON_TYPE_CLASSES = {
 
 import './button.styles.scss'
 
-const button = ({children, buttonType, ...otherProps}) => {
+const Button = ({children, buttonType, ...otherProps}) => {
     return (
         <button className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`} {...otherProps}>{children}</button>
     )
 }
 
-export default button
+export default Button
