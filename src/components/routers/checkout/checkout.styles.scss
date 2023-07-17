@@ -1,5 +1,8 @@
 .checkout-container {
   width: 55%;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
   min-height: 90vh;
   display: flex;
   flex-direction: column;
