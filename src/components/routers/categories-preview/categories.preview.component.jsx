@@ -2,9 +2,10 @@ import {Fragment, useContext} from 'react'
 import {CategoriesContext} from "../../../contexts/categories.context";
 import ProductCard from "../../product-card/product-card.component";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {selectFixCategories} from "../../../store/category/category.selector";
 const CategoriesPreview = () => {
-    const {getFixedCountCategoriesMap} = useContext(CategoriesContext);
-    const categoriesMap = getFixedCountCategoriesMap(4)
+    const categoriesMap= useSelector(state =>selectFixCategories(state,4));
     return (
         <Fragment>
             {
