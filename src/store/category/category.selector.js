@@ -25,3 +25,6 @@ export const selectFixCategories = (state, count) => {
     })
     return result;
 }
+
+export const selectCategoriesIsLoading = createSelector([selectCategoryReducer],
+    (categoriesSlice) => categoriesSlice.isLoading)

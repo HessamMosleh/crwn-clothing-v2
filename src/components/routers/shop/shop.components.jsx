@@ -1,11 +1,10 @@
-import {Routes, Route} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import CategoriesPreview from '../categories-preview/categories.preview.component';
 import Category from "../category/category.component";
 
 import './shop.syles.scss'
 import {useEffect} from "react";
-import {getCategoriesAndDocuments} from "../../../utils/firebase/firebase.utils";
-import {setCategories} from "../../../store/category/category.action";
+import {fetchCategoriesAsync} from "../../../store/category/category.action";
 import {useDispatch} from "react-redux";
 
 const Shop = () => {
@@ -13,12 +12,7 @@ const Shop = () => {
 
     //GET CATEGORIES MAP
     useEffect(() => {
-        async function runFunc() {
-            const categories = await getCategoriesAndDocuments();
-            dispatch(setCategories(categories))
-        }
-
-        runFunc()
+            dispatch(fetchCategoriesAsync())
     }, [])
 
     return (

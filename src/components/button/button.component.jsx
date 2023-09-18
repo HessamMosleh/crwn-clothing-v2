@@ -6,8 +6,6 @@ export const BUTTON_TYPE_CLASSES = {
     inverted: 'inverted'
 }
 
-import './button.styles'
-
 const getButtonType = (type = BUTTON_TYPE_CLASSES.base)=>{
     return {
         [BUTTON_TYPE_CLASSES.base]:BaseButton,
